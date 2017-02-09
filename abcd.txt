@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <b:include data='blog' name='all-head-content'/>
+
+    <title>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <data:blog.pageTitle/>
+        <b:else/>
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+          <data:blog.pageName/> | <data:blog.title/>
+          <b:else/>
+          Page Not Found | <data:blog.title/>
+        </b:if>
+      </b:if>
+    </title>
+
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn|Exo|Open+Sans|Roboto|Ubuntu|Josefin+Sans|Rubik:500i|Droid+Serif:400i' rel='stylesheet'/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/css/jquery.mmenu.all.css" rel="stylesheet"/>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.7.8/js/jquery.mmenu.all.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'/>
+
+      <script type="text/javascript">
+      //<![CDATA[ 
+         jQuery(document).ready(function( $ ) {
+            $("#menu").mmenu({
+               "extensions": [
+                  "pagedim-black",
+                  "theme-dark"
+               ],
+               "counters": true,
+               "navbars": [
+                  {
+                     "position": "bottom",
+                     "content": [
+                        "<a class='fa fa-envelope' href='#/'></a>",
+                        "<a class='fa fa-twitter' href='#/'></a>",
+                        "<a class='fa fa-facebook' href='#/'></a>"
+                     ]
+                  }
+               ]
+            });
+         });
+      // ]]>
+      </script>
+
+
+    <b:skin><![CDATA[ 
+
+body { background:white; color:black;}
+
+.slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent;}.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0;}.slick-list:focus{outline:none;}.slick-list.dragging{cursor:pointer;cursor:hand;}.slick-slider .slick-track,.slick-slider .slick-list{-webkit-transform:translate3d(0, 0, 0);-moz-transform:translate3d(0, 0, 0);-ms-transform:translate3d(0, 0, 0);-o-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}.slick-track{position:relative;top:0;left:0;display:block;}.slick-track:before,.slick-track:after{display:table;content:'';}.slick-track:after{clear:both;}.slick-loading .slick-track{visibility:hidden;}.slick-slide{display:none;float:left;height:100%;min-height:1px;}[dir='rtl'] .slick-slide{float:right;}.slick-slide img{display:block;}.slick-slide.slick-loading img{display:none;}.slick-slide.dragging img{pointer-events:none;}.slick-initialized .slick-slide{display:block;}.slick-loading .slick-slide{visibility:hidden;}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent;}.slick-arrow.slick-hidden {display:none;}
+
+.swipe-tabs{height:40px;color:white;text-align:center;font-size:20px}
+.swipe-tab{height:40px;box-shadow:inset 0 0px 0 0 white;cursor:pointer;transition:0.6s;transition-property:box-shadow;padding-top:8px}
+.swipe-tab:hover{color:aqua}
+.active-tab{box-shadow:inset 0 -5px 0 0 white;transform:box-shadow;}
+
+.navmenu {z-index: 1;}
+.canvas {position: relative;left: 0;z-index: 2;min-height: 100%;padding: 50px 0 0 0;background: #fff;box-shadow:-25px 0px 30px rgba(0,0,0,0.30); -webkit-box-shadow:-25px 0px 20px rgba (0,0,0,0.30);}
+.canvas-slid:after,
+.canvas-sliding:after{content:"";width:100%;height:100%;position:fixed;top:0;left:300px;
+z-index:9999;background:rgba(0,0,0,0)!important;}
+@media (min-width: 0) {
+.vjbtn {display: block;}
+}
+
+.navbar-brand{padding-left:25px;-webkit-box-shadow:inset #FF8C00 20px 0 0 0;box-shadow:inset #FF8C00 20px 0 0 0;-webkit-transition:-webkit-box-shadow;transition:box-shadow;-webkit-transition-duration:.5s;transition-duration:.5s}
+.navbar-brand:focus, .navbar-brand:hover{-webkit-box-shadow:inset #FF8C00 200px 0 0 0;box-shadow:inset #FF8C00 200px 0 0 0}
+.header {left: 0px;-webkit-transition: -webkit-transform 1s cubic-bezier(0.86, 0, 0.07, 1), left 0.35s;
+-moz-transition: -moz-transform 1s cubic-bezier(0.86, 0, 0.07, 1), left 0.35s;
+transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), left 0.35s; box-shadow:0 10px 20px rgba(0,0,0,0.30)}
+.header.hid {-webkit-transform: translateY(-50px);-moz-transform: translateY(-50px);-ms-transform: translateY(-50px);-o-transform: translateY(-50px);transform: translateY(-50px);}
+
+.post-title{display:block;width:100%;background:#F44336;margin-top:0px;padding-top:30px;}
+.post-title a{font: 50px 'Vollkorn',serif;color: #fefefe;text-transform: none;letter-spacing: 0px;text-decoration:none;padding-left:50px}
+.banner{background:#F44336;margin-top:-40px;padding-top:100px;color:white}
+.banner a{text-decoration:none;color:white;}
+.banner a:hover{text-decoration:none;color:#ccc;}
+.logo {font: 84px 'Vollkorn',serif;color: #fefefe;text-transform:none;letter-spacing: -4px;}
+/* stuff for both words */
+.logo span {position: relative;}
+.logo span:before,
+.logo span:after {content: '';position: absolute;border-width: 32px;/* makes a nice, big 64px square */
+border-style: solid;border-color: transparent;height: 0;z-index: 10;}
+/* stuff for 1st word */
+.logo .word1 {color: #dc006c;margin-right: -38px;transform: rotateY(180deg);/* using Prefix free */
+display: inline-block;/* required for transform */
+z-index: 10;/* stack 1st word on top */}
+.logo .word1:before {right: -0px;/* would be left, but we flipped the word */top: -9px;border-top-color: red;border-right-color: red;/* would be left, but we flipped the word */}
+.logo .word1:after {
+left: 17px;/* would be right, but we flipped the word */
+bottom: -15px;border-bottom-color: red;border-left-color: red;/* would be right, but we flipped the word */}
+/* stuff for 2nd word */
+.logo .word2 {z-index: 0;/* stack 2nd word below */}
+.logo .word2:before {left: 0px;top: -6px;border-top-color:#F44336;border-left-color:#F44336;}
+.logo .word2:after {right:-5px;bottom: 10px;border-bottom-color:#F44336;border-right-color:#F44336;}
+
+.main-container{background:wheat;font-family:Roboto}
+.main-container hr{display:block;height:1px;border:0;border-top:2px solid #F44336;margin:1em 0;padding: 0;}
+
+.vjbtn{position:relative;float:left;margin-left:0px;margin-right:10px;padding-top:5px;margin-bottom:0px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px;color:white;font-size:150%;height:50px;margin-right:20px}
+.vjbtn:hover{color:aqua;}
+.vjbtn:focus{border:white 1px}
+.scrlltop{display:block;position:fixed;width:50px;height:50px;background:#444;bottom:10px;right:10px;z-index:999;color:white;
+border-top-left-radius:50%;border-bottom-left-radius:50%;border-bottom-right-radius:50%;border-top-right-radius:8%;
+-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+.scrlltop:hover{color:aqua}
+
+.swipe-help{display:block;float:right;margin-right:-30px;margin-top:10px;background:transparent;width:35px;height:32px;font-size:30px;
+-webkit-animation: swipe-indi 1s infinite ease-in-out;
+-moz-animation: swipe-indi 1s infinite ease-in-out;
+-ms-animation: swipe-indi 1s infinite ease-in-out;
+-o-animation: swipe-indi 1s infinite ease-in-out;
+animation: swipe-indi 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes swipe-indi {
+0% { -webkit-transform: rotate(-60deg);-webkit-transform-origin: left center;
+-moz-transform: rotate(-60deg);-moz-transform-origin: left center;
+-ms-transform: rotate(-60deg);-ms-transform-origin: left center;
+-o-transform: rotate(-60deg);-o-transform-origin: left center;
+transform: rotate(-60deg);transform-origin: left center;
+}
+100% { -webkit-transform: rotate(-120deg);-webkit-transform-origin: left center;
+-moz-transform: rotate(-120deg);-moz-transform-origin: left center;
+-ms-transform: rotate(-120deg);-ms-transform-origin: left center;
+-o-transform: rotate(-120deg);-o-transform-origin: left center;
+transform: rotate(-120deg);transform-origin: left center;
+}
+}
+
+@media (max-width:767px){
+.vjbtn{margin-left:10px}
+.swipe-tabs{height:50px}
+.swipe-tab{height:50px}
+
+]]></b:skin>
+
+  </head>
+
+  <body>
+<div class="page">
+      <div class="header">
+        <a href="#menu">Menu</a>
+        Demo
+      </div>
+      <div class="content">
+        <div class='main-container'>
+          <b:section class='main' id='main' preferred='yes' showaddelement='yes' maxwidgets=''>
+            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            </b:widget>
+          </b:section>
+        </div>
+      </div>
+    </div>
+
+    <!-- The menu -->
+    <nav id="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a>
+          <ul>
+            <li><a href="/about/history">History</a></li>
+            <li><a href="/about/team">The team</a></li>
+            <li><a href="/about/address">Our address</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!--div class="page">
+         <div class="header">
+            <a href="#menu">Demo</a>
+         </div>
+      <div class="content">
+			<div>
+        <div class='sub-header'>
+          <div class='swipe-tabs'>
+            <div class='swipe-tab' id='one'><span class='glyphicon glyphicon-home'/></div>
+            <div class='swipe-tab' id='two'><span class='glyphicon glyphicon-fire'/></div>
+            <div class='swipe-tab' id='three'><span class='glyphicon glyphicon-inbox'/></div>
+            <div class='swipe-tab' id='four'><span class='glyphicon glyphicon-user'/></div>
+            <div class='swipe-tab' id='five'><span class='glyphicon glyphicon-pencil'/></div>
+          </div>
+        </div>
+
+        <a href="#Top"><div class="scrlltop"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="-webkit-transform:rotate(-135deg);font-size:20px;margin-left:16px;margin-top:12px"></span></div></a>
+
+        <div class='container-fluid banner' style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;">
+          <h1 class='logo'>
+            <!-span class="word1">The</span->
+            <!-span class='word2'><a href="https://yourpalnurav.blogspot.in/main">YourPalNurav</a></span>
+          </h1>
+          <h3 id="Top">Learn something New Everyday</h3>
+          <p>Scroll this page to see how the navbar behaves with data-spy=&quot;affix&quot;.</p>
+          <p>The navbar is attached to the top of the page after you have scrolled a specified amount of pixels.</p>
+        </div>
+
+        <div class='main-container'>
+          <b:section class='main' id='main' preferred='yes' showaddelement='yes' maxwidgets=''>
+            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            </b:widget>
+          </b:section>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+    <!- The menu ->
+    <!-nav id="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a>
+          <ul>
+            <li><a href="/about/history">History</a></li>
+            <li><a href="/about/team">The team</a></li>
+            <li><a href="/about/address">Our address</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav-->
+
+
+    <script type='text/javascript'>
+      //<![CDATA[ 
+      $(function () {
+        'use strict';
+        var $swipeTabsContainer = $('.swipe-tabs'),
+            $swipeTabs = $('.swipe-tab'),
+            $swipeTabsContentContainer = $('.swipe-tabs-container'),
+            currentIndex = 0,
+            activeTabClassName = 'active-tab';
+        $swipeTabsContainer.on('init', function(event, slick) {
+          $swipeTabsContentContainer.removeClass('invisible');
+          $swipeTabsContainer.removeClass('invisible');
+          currentIndex = slick.getCurrent();
+          $swipeTabs.removeClass(activeTabClassName);
+          $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
+        });
+        $swipeTabsContainer.slick({
+          //slidesToShow: 3.25,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          arrows: false,
+          infinite: false,
+          swipeToSlide: true,
+          touchThreshold: 10
+        });
+        $swipeTabsContentContainer.slick({
+          asNavFor: $swipeTabsContainer,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          swipeToSlide: true,
+          cssEase: 'ease',
+          //easing: linear,
+          infinite: false,
+          //draggable: false,
+          touchThreshold: 10
+        });
+        $swipeTabs.on('click', function(event) {
+          // gets index of clicked tab
+          currentIndex = $(this).data('slick-index');
+          $swipeTabs.removeClass(activeTabClassName);
+          $('.swipe-tab[data-slick-index=' + currentIndex +']').addClass(activeTabClassName);
+          $swipeTabsContainer.slick('slickGoTo', currentIndex);
+          $swipeTabsContentContainer.slick('slickGoTo', currentIndex);
+
+
+        });
+        //initializes slick navigation tabs swipe handler
+        $swipeTabsContentContainer.on('swipe', function(event, slick, direction) {
+          currentIndex = $(this).slick('slickCurrentSlide');
+          $swipeTabs.removeClass(activeTabClassName);
+          $('.swipe-tab[data-slick-index=' + currentIndex + ']').addClass(activeTabClassName);
+        });
+      });
+
+
+      $( "#two" ).click(function() {$(".tab-indicator").css({"transform" : "translate3d(100%,0,0)"});});
+      $( "#one" ).click(function() {$(".tab-indicator").css({"transform" : "translate3d(0,0,0)"});});
+      $( "#three" ).click(function() {$(".tab-indicator").css({"transform" : "translate3d(200%,0,0)"});});
+      $( "#four" ).click(function() {$(".tab-indicator").css({"transform" : "translate3d(300%,0,0)"});});
+      $( "#five" ).click(function() {$(".tab-indicator").css({"transform" : "translate3d(400%,0,0)"});});
+
+      /////////	HIDE NAVBAR ON SCROLL	///////////
+      var prev = 0;
+      var $window = $(window);
+      var nav = $('.header');
+
+      $window.on('scroll', function(){
+        var scrollTop = $window.scrollTop();
+        nav.toggleClass('hid', scrollTop > prev);
+        prev = scrollTop;
+      });
+      ////////	SMOOTH SCROLL	///////////////
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 800);
+              return false;
+            }
+          }
+        });
+      });
+
+      // ]]>
+    </script>
+    <!--
+
+}-->
+
+
+  </body>
+</html>
